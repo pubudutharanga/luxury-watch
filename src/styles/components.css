@@ -1,0 +1,75 @@
+/* src/styles/components.css */
+
+/* ==================== HERO COMPONENT FIXES ==================== */
+.hero-glint-effect {
+  background: linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.8) 50%, transparent 100%);
+  transform: rotate(15deg);
+  filter: blur(1px);
+  pointer-events: none;
+}
+
+.hero-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.8) 0%, rgba(212, 175, 55, 0.2) 70%);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+  filter: blur(0.5px);
+}
+
+/* ==================== 3D WATCH COMPONENT FIXES ==================== */
+.three-canvas-wrapper {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.three-canvas-wrapper canvas {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  outline: none !important;
+}
+
+/* ==================== PARALLAX BOX FIXES ==================== */
+.parallax-box-wrapper {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* ==================== VIDEO ERROR STATES ==================== */
+.video-error-state {
+  background: linear-gradient(135deg, #000000, #1a1a1a, #000000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.video-error-state::before {
+  content: '🎬';
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+/* ==================== TOUCH DEVICE OPTIMIZATIONS ==================== */
+@media (hover: none) {
+  .hover-effect {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  .parallax-effect {
+    transform: none !important;
+  }
+}
+
+/* ==================== REDUCED MOTITION OPTIONS ==================== */
+.reduced-motion * {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+}

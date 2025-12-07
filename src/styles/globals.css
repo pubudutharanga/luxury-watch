@@ -1,0 +1,1115 @@
+/* src/styles/globals.css */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==================== CUSTOM PROPERTIES ==================== */
+:root {
+  --gold: #D4AF37;
+  --gold-light: #FFD700;
+  --gold-dark: #B8860B;
+  --bg: #000000;
+  --text: #E6E6E6;
+  --radius: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+}
+
+/* ==================== BASE RESET ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ==================== TYPOGRAPHY ==================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(3rem, 8vw, 5rem);
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.3;
+}
+
+p {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ==================== CUSTOM SCROLLBAR ==================== */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  border-radius: 5px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+}
+
+/* ==================== KEYFRAME ANIMATIONS ==================== */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes pulse-gold {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.glow-animation {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.pulse-gold {
+  animation: pulse-gold 2s ease-in-out infinite;
+}
+
+.shimmer-effect {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(212, 175, 55, 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 3s infinite;
+}
+
+.spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.slide-up {
+  animation: slide-up 0.5s ease-out forwards;
+}
+
+.fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+.bounce-animation {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+/* ==================== GLASS MORPHISM ==================== */
+.glass-effect {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.glass-effect-light {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* ==================== TEXT EFFECTS ==================== */
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-silver {
+  background: linear-gradient(135deg, #E6E6E6 0%, #B0B0B0 50%, #666666 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-stroke-gold {
+  -webkit-text-stroke: 1px var(--gold);
+  color: transparent;
+}
+
+/* ==================== BACKGROUND EFFECTS ==================== */
+.bg-gradient-gold {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+}
+
+.bg-gradient-dark {
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+}
+
+.bg-gradient-radial-gold {
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(212, 175, 55, 0.1) 0%,
+    rgba(212, 175, 55, 0.05) 30%,
+    transparent 70%
+  );
+}
+
+/* ==================== VIDEO COMPONENTS ==================== */
+.video-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.video-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(212, 175, 55, 0.1) 0%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+.video-controls {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.video-control-button {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  transition: all 0.2s ease;
+}
+
+.video-control-button:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: var(--gold);
+  transform: scale(1.1);
+}
+
+.video-poster {
+  background: linear-gradient(45deg, #000000, #1a1a1a, #000000);
+  background-size: 400% 400%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+/* ==================== PROGRESS BARS ==================== */
+.progress-bar {
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+  background-size: 200% 100%;
+  animation: gradient-shift 2s ease infinite;
+  transition: width 0.3s ease;
+}
+
+.range-slider-gold {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(212, 175, 55, 0.2);
+  outline: none;
+}
+
+.range-slider-gold::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--gold);
+  cursor: pointer;
+  border: 3px solid #000;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.range-slider-gold::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--gold);
+  cursor: pointer;
+  border: 3px solid #000;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+/* ==================== BUTTONS ==================== */
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  color: #000;
+  font-weight: 600;
+  padding: 12px 32px;
+  border-radius: 50px;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+}
+
+.btn-gold::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-gold:hover::after {
+  left: 100%;
+}
+
+.btn-outline-gold {
+  background: transparent;
+  color: var(--gold);
+  border: 2px solid var(--gold);
+  padding: 10px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-outline-gold:hover {
+  background: rgba(212, 175, 55, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.1);
+}
+
+/* ==================== SECTION STYLES ==================== */
+.section-padding {
+  padding: 100px 0;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+}
+
+/* ==================== 3D EFFECTS ==================== */
+.perspective-3d {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.rotate-3d {
+  transform: rotateX(var(--rotate-x, 0)) rotateY(var(--rotate-y, 0));
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* ==================== LOADING STATES ==================== */
+.loading-spinner {
+  border: 3px solid rgba(212, 175, 55, 0.1);
+  border-top: 3px solid var(--gold);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin-slow 1s linear infinite;
+}
+
+/* ==================== SHADOWS ==================== */
+.shadow-gold {
+  box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2);
+}
+
+.shadow-gold-lg {
+  box-shadow: 0 20px 80px rgba(212, 175, 55, 0.3);
+}
+
+.shadow-gold-xl {
+  box-shadow: 0 30px 120px rgba(212, 175, 55, 0.4);
+}
+
+/* ==================== BORDER GRADIENTS ==================== */
+.border-gradient-gold {
+  border: 2px solid transparent;
+  background: linear-gradient(black, black) padding-box,
+              linear-gradient(135deg, var(--gold), var(--gold-dark)) border-box;
+}
+
+/* ==================== GRID PATTERNS ==================== */
+.grid-pattern {
+  background-image: 
+    linear-gradient(rgba(212, 175, 55, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 175, 55, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* ==================== PARTICLE EFFECTS ==================== */
+.particle {
+  position: absolute;
+  background: var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.3;
+  filter: blur(1px);
+}
+
+.particle-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* ==================== SMOOTH TRANSITIONS ==================== */
+.smooth-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==================== SCROLL SNAP ==================== */
+.snap-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.snap-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* ==================== ACCESSIBILITY ==================== */
+.focus-visible-gold:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ==================== PRINT STYLES ==================== */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* ==================== DARK MODE OVERRIDES ==================== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+/* ==================== HIGH CONTRAST MODE ==================== */
+@media (prefers-contrast: high) {
+  .btn-gold {
+    background: var(--gold);
+    color: #000;
+  }
+  
+  .text-gradient-gold {
+    color: var(--gold) !important;
+    background: none !important;
+    -webkit-text-fill-color: initial !important;
+  }
+}
+
+/* ==================== COMPONENT SPECIFIC FIXES ==================== */
+
+/* Hero Component Fixes */
+.hero-video-container {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7) contrast(1.2) saturate(1.1);
+}
+
+/* 3D Watch View Canvas Fix */
+.canvas-container {
+  width: 100% !important;
+  height: 100% !important;
+  position: relative;
+}
+
+.canvas-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* Particle Background Fixes */
+.particle-bg-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -10;
+  overflow: hidden;
+}
+
+/* Parallax Box Video Fix */
+.parallax-video {
+  transform: scale(1.1);
+  filter: brightness(0.9) contrast(1.1) saturate(1.2);
+  transition: opacity 0.7s ease;
+}
+
+/* Finale Video Optimization */
+.finale-video {
+  width: auto;
+  min-width: 100%;
+  height: auto;
+  min-height: 100%;
+  object-fit: contain;
+  filter: brightness(0.9) contrast(1.1) saturate(1.2) blur(1px);
+}
+
+/* Video Loading States */
+.video-loading-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #000000, #0a0a0a, #000000);
+  z-index: 10;
+}
+
+/* Mobile Touch Improvements */
+@media (hover: none) and (pointer: coarse) {
+  .video-control-button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .btn-gold, .btn-outline-gold {
+    padding: 14px 32px;
+  }
+  
+  /* Larger touch targets for mobile */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .float-animation,
+  .glow-animation,
+  .pulse-gold,
+  .shimmer-effect,
+  .spin-slow {
+    animation: none !important;
+  }
+}
+
+/* Performance Optimizations */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+/* Responsive Video Aspect Ratios */
+.video-aspect-16-9 {
+  aspect-ratio: 16 / 9;
+}
+
+.video-aspect-4-3 {
+  aspect-ratio: 4 / 3;
+}
+
+.video-aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+/* Smooth GPU Acceleration */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Selection Color */
+::selection {
+  background-color: rgba(212, 175, 55, 0.3);
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: rgba(212, 175, 55, 0.3);
+  color: #ffffff;
+}
+
+/* ==================== FALLBACKS FOR OLDER BROWSERS ==================== */
+@supports not (backdrop-filter: blur(10px)) {
+  .glass-effect,
+  .glass-effect-light,
+  .video-controls {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+
+@supports not (aspect-ratio: 16 / 9) {
+  .video-aspect-16-9::before {
+    content: '';
+    display: block;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  }
+  
+  .video-aspect-16-9 > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* ==================== IE11 FALLBACKS ==================== */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE10+ CSS styles */
+  .text-gradient-gold {
+    color: var(--gold) !important;
+    background: none !important;
+  }
+  
+  .glass-effect {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  .grid-pattern {
+    background: none;
+  }
+}
+
+/* ==================== SAFARI SPECIFIC FIXES ==================== */
+_::-webkit-full-page-media, _:future, :root .safari-only {
+  /* Safari-specific styles */
+  .video-container {
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+  }
+}
+
+/* ==================== FIREFOX SCROLLBAR FIX ==================== */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) rgba(0, 0, 0, 0.3);
+}
+
+/* ==================== LOADING PROGRESS ==================== */
+.progress-ring {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.progress-ring-circle {
+  stroke-dasharray: 283;
+  stroke-dashoffset: 283;
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+/* ==================== CUSTOM CURSORS ==================== */
+.cursor-grab {
+  cursor: grab;
+}
+
+.cursor-grabbing {
+  cursor: grabbing;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* ==================== OVERFLOW MANAGEMENT ==================== */
+.overflow-visible-fix {
+  overflow: visible !important;
+}
+
+/* ==================== Z-INDEX MANAGEMENT ==================== */
+.z-negative {
+  z-index: -1;
+}
+
+.z-base {
+  z-index: 0;
+}
+
+.z-overlay {
+  z-index: 10;
+}
+
+.z-modal {
+  z-index: 50;
+}
+
+.z-tooltip {
+  z-index: 100;
+}
+
+/* ==================== INTERACTION STATES ==================== */
+.hover-lift:hover {
+  transform: translateY(-4px);
+  transition: transform 0.2s ease;
+}
+
+.active-scale:active {
+  transform: scale(0.98);
+}
+
+.focus-scale:focus {
+  transform: scale(1.02);
+}
+
+/* ==================== PERFORMANCE OPTIMIZATIONS ==================== */
+.content-visibility-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
+
+/* ==================== END OF FILE ==================== */
+
+/* Add to the existing animations section */
+@keyframes particle-float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px);
+  }
+  50% {
+    transform: translateY(-20px) translateX(0);
+  }
+  75% {
+    transform: translateY(-10px) translateX(-5px);
+  }
+}
+
+@keyframes particle-pulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes particle-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* New utility classes for particles */
+.particle-float {
+  animation: particle-float 8s ease-in-out infinite;
+}
+
+.particle-pulse {
+  animation: particle-pulse 3s ease-in-out infinite;
+}
+
+.particle-spin {
+  animation: particle-spin 20s linear infinite;
+}
+
+/* Canvas container styles */
+.canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  pointer-events: none;
+}
+
+/* Gradient overlays */
+.gradient-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.gradient-radial-gold {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(212, 175, 55, 0.1) 0%,
+    rgba(212, 175, 55, 0.05) 30%,
+    transparent 70%
+  );
+}
+
+.gradient-radial-dark {
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    rgba(0, 0, 0, 0.3) 40%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+
+/* Vignette effect */
+.vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    rgba(0, 0, 0, 0.2) 40%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  pointer-events: none;
+}
+
+/* Interactive glow effect */
+.interactive-glow {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.3) 0%,
+    rgba(212, 175, 55, 0.1) 30%,
+    transparent 70%
+  );
+  pointer-events: none;
+  filter: blur(20px);
+}
+
+/* Performance optimization for 3D canvas */
+canvas {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .canvas-container {
+    transform: scale(1.2); /* Slightly zoom in on mobile for better visibility */
+  }
+  
+  /* Reduce particle count hint for mobile */
+  .particle-optimized {
+    opacity: 0.7; /* Slightly fade on mobile for performance */
+  }
+}
+
+/* High-performance mode for low-end devices */
+@media (prefers-reduced-motion: reduce) {
+  .particle-float,
+  .particle-pulse,
+  .particle-spin {
+    animation: none;
+  }
+  
+  canvas {
+    opacity: 0.5; /* Reduce visual intensity */
+  }
+}
+
+/* Dark mode optimizations */
+@media (prefers-color-scheme: dark) {
+  .gradient-radial-gold {
+    opacity: 0.8; /* Slightly reduce opacity in dark mode */
+  }
+}
+
+/* Print styles - hide particles when printing */
+@media print {
+  .canvas-container,
+  .gradient-overlay,
+  .vignette,
+  .interactive-glow {
+    display: none !important;
+  }
+}
+
+/* Add these styles to your existing globals.css */
+
+/* Canvas container fixes */
+canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  outline: none;
+}
+
+/* Fix for Three.js canvas z-index */
+.fixed.inset-0.-z-10 {
+  z-index: -10;
+}
+
+/* Ensure the canvas is properly positioned */
+.fixed.inset-0.-z-10 canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Particle debug styles */
+.particle-debug {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  font-family: monospace;
+  font-size: 12px;
+  color: #00ff00;
+  border: 1px solid #D4AF37;
+}
+
+/* WebGL error message */
+.webgl-error {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.9);
+  padding: 30px;
+  border-radius: 10px;
+  border: 2px solid #D4AF37;
+  text-align: center;
+  max-width: 500px;
+  z-index: 10000;
+}
+
+.webgl-error h3 {
+  color: #D4AF37;
+  margin-bottom: 15px;
+}
+
+.webgl-error p {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.webgl-error code {
+  background: rgba(212, 175, 55, 0.1);
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: #D4AF37;
+}
+
+/* Loading animation for particles */
+@keyframes particle-loading {
+  0% { opacity: 0; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.1); }
+  100% { opacity: 0; transform: scale(0.8); }
+}
+
+.particle-loading {
+  animation: particle-loading 2s ease-in-out infinite;
+}
+
+/* Fallback gradient when WebGL fails */
+.webgl-fallback {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #000000 0%, #0a0a0a 25%, #000000 50%, #0a0a0a 75%, #000000 100%);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+/* Mobile optimizations for particles */
+@media (max-width: 768px) {
+  .fixed.inset-0.-z-10 {
+    /* Reduce particle intensity on mobile for performance */
+    opacity: 0.8;
+  }
+  
+  /* Hide debug on mobile */
+  .particle-debug {
+    display: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .fixed.inset-0.-z-10 {
+    /* Reduce glow for high contrast */
+    filter: brightness(0.9);
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .fixed.inset-0.-z-10 * {
+    animation: none !important;
+  }
+  
+  canvas {
+    /* Reduce particle movement */
+    opacity: 0.7;
+  }
+}
+
