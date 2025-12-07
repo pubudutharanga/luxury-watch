@@ -188,7 +188,7 @@ export default function ExplodedView() {
                   loop
                   preload="auto"
                 >
-                  <source src="/videos/exploded-animation.mp4" type="video/mp4" />
+                  <source src="videos/exploded-animation.mp4" type="video/mp4" />
                   <source src="https://assets.mixkit.co/videos/preview/mixkit-gears-of-a-mechanism-exploding-in-slow-motion-41527-large.mp4" type="video/mp4" />
                 </video>
 

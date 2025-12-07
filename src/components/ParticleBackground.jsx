@@ -55,7 +55,7 @@ export default function ParticleBackground() {
           }}
           onLoadedData={() => setIsLoaded(true)}
         >
-          <source src="/videos/particles-loop.mp4" type="video/mp4" />
+          <source src="videos/particles-loop.mp4" type="video/mp4" />
           <source src="https://assets.mixkit.co/videos/preview/mixkit-gold-particles-floating-in-space-41985-large.mp4" type="video/mp4" />
         </video>
       </div>

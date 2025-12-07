@@ -216,9 +216,9 @@ export default function LidReveal() {
                   muted={isMuted}
                   playsInline
                   preload="auto"
-                  poster="/images/video-poster.jpg"
+                  poster="images/video-poster.jpg"
                 >
-                  <source src="/videos/lid-open.mp4" type="video/mp4" />
+                  <source src="videos/lid-open.mp4" type="video/mp4" />
                   <source src={fallbackVideoUrl} type="video/mp4" />
                   Your browser does not support HTML5 video.
                 </video>

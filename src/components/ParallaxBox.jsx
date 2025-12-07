@@ -103,7 +103,7 @@ export default function ParallaxBox() {
                 }}
                 onLoadedData={handleVideoLoad}
               >
-                <source src="/videos/box-unboxing.mp4" type="video/mp4" />
+                <source src="videos/box-unboxing.mp4" type="video/mp4" />
                 <source src="https://assets.mixkit.co/videos/preview/mixkit-a-luxury-black-watch-box-being-opened-41604-large.mp4" type="video/mip4" />
                 Your browser does not support the video tag.
               </video>

@@ -70,7 +70,7 @@ export default function Finale() {
     video.addEventListener('timeupdate', handleTimeUpdate);
 
     // Load video source
-    video.src = '/videos/finale-polish.mp4';
+    video.src = 'videos/finale-polish.mp4';
     video.load();
 
     // Fallback timer in case video doesn't load

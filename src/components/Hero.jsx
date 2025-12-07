@@ -212,7 +212,7 @@ export default function Hero() {
               filter: 'brightness(0.7) contrast(1.2) saturate(1.1)'
             }}
           >
-            <source src="/videos/hero-bg.mp4" type="video/mp4" />
+            <source src="videos/hero-bg.mp4" type="video/mp4" />
           </video>
         </motion.div>
 

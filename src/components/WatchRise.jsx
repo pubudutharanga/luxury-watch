@@ -101,7 +101,7 @@ export default function WatchRise() {
                 playsInline
                 preload="auto"
               >
-                <source src="/videos/watch-rise.mp4" type="video/mp4" />
+                <source src="videos/watch-rise.mp4" type="video/mp4" />
                 <source src="https://assets.mixkit.co/videos/preview/mixkit-luxury-watch-rising-from-a-box-41606-large.mp4" type="video/mp4" />
               </video>
               

@@ -156,7 +156,7 @@ export default function SealBreak() {
                   onTimeUpdate={handleTimeUpdate}
                   onEnded={() => setIsPlaying(false)}
                 >
-                  <source src="/videos/seal-break.mp4" type="video/mp4" />
+                  <source src="videos/seal-break.mp4" type="video/mp4" />
                   <source src="https://assets.mixkit.co/videos/preview/mixkit-breaking-a-wax-seal-on-a-document-40918-large.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
