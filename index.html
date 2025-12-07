@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark Luxury — Unboxing Experience</title>
+    <meta name="description" content="Immersive luxury watch unboxing experience with interactive videos and 3D animations" />
+    <meta name="theme-color" content="#000000" />
+    <style>
+      /* Critical CSS for initial loading */
+      body {
+        margin: 0;
+        padding: 0;
+        background: #000000;
+        color: #ffffff;
+        overflow-x: hidden;
+      }
+      #root {
+        min-height: 100vh;
+      }
+      /* Loading animation */
+      .app-loading {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #000000;
+        z-index: 9999;
+      }
+      .loading-spinner {
+        width: 60px;
+        height: 60px;
+        border: 3px solid rgba(212, 175, 55, 0.1);
+        border-top: 3px solid #D4AF37;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+    <script type="module" crossorigin src="/luxury-watch/assets/index-c9c5393d.js"></script>
+    <link rel="modulepreload" crossorigin href="/luxury-watch/assets/react-vendor-b1791c80.js">
+    <link rel="modulepreload" crossorigin href="/luxury-watch/assets/animation-vendor-58e0a18d.js">
+    <link rel="modulepreload" crossorigin href="/luxury-watch/assets/ui-vendor-71f6eca7.js">
+    <link rel="stylesheet" href="/luxury-watch/assets/index-65c22430.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    
+  </body>
+</html>
